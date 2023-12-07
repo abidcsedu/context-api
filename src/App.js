@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
+
+import Section from "./components/Context-api/Section";
+import Counter from "./components/Render-props/Counter";
+import ClickCounter from "./components/Render-props/Render-props/ClickCounter";
+// import HoverCounter from "./components/Render-props/Render-props/HoverCounter";
+// import User from "./components/User";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div style={{ padding: 20 }}>
+			{/* HOC */}
+			{/* <ClickCounter />
+			<HoverCounter /> */}
+
+			{/* RENDER PROPS */}
+			{/* <ClickCounter />
+			<HoverCounter /> */}
+			{/* <User render={(isLoggedIn) => (isLoggedIn ? "Habib" : "Guest")} /> */}
+			<Counter
+				render={(count, incrementCount) => (
+					<ClickCounter count={count} incrementCount={incrementCount} />
+				)}
+			/>
+			<Section />
+		</div>
+	);
 }
 
 export default App;
